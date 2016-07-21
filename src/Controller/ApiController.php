@@ -30,10 +30,12 @@ class ApiController
 
     /**
      * @Route("/", methods="POST")
-     * @Request({"token" = "string", "tracks" = "array", "limit" = "int", "groups" = "int", "buffer" = "float"})
+     * @Request({"token" = "string", "tracks" = "array", "limit" = "int", "groups" = "int", "buffer" = "string"})
      */
     function suggestAction($token = null, $tracks = [], $limit = 20, $groups = null, $buffer = null)
     {
+
+        $buffer = $buffer ? floatval($buffer) : null;
 
         $groups = $groups ?: App::module('spotify-track-suggester')->config('default_settings')['groups'];
 

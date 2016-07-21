@@ -21,6 +21,6 @@
   },
   "require": {
     "guzzlehttp/guzzle": "~6.0",
-    "bdelespierre/php-kmeans": "dev-master"
+    "crwgregory/php-kmeans": "1.0.0"
   }
 }
