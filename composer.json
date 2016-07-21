@@ -1,0 +1,26 @@
+{
+  "name": "crwgregory/spotify-track-suggester",
+  "version": "0.0.2",
+  "type": "pagekit-extension",
+  "title": "Spotify Track Suggester",
+  "description": "",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Chris Gregory",
+      "email": "crwgregory@gmail.com",
+      "homepage": "crwgregory.com"
+    }
+  ],
+  "extra": {
+    "icon": "icon.svg",
+    "scripts": "scripts.php"
+  },
+  "archive": {
+    "exclude": ["node_modules", "!/app"]
+  },
+  "require": {
+    "guzzlehttp/guzzle": "~6.0",
+    "bdelespierre/php-kmeans": "dev-master"
+  }
+}
