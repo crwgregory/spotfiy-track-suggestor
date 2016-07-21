@@ -30,9 +30,9 @@ class ApiController
 
     /**
      * @Route("/", methods="POST")
-     * @Request({"token" = "string", "tracks" = "array", "groups" = "int", "buffer" = "float"})
+     * @Request({"token" = "string", "tracks" = "array", "limit" = "int", "groups" = "int", "buffer" = "float"})
      */
-    function suggestAction($token = null, $tracks = [], $groups = null, $buffer = null)
+    function suggestAction($token = null, $tracks = [], $limit = 20, $groups = null, $buffer = null)
     {
 
         $groups = $groups ?: App::module('spotify-track-suggester')->config('default_settings')['groups'];
@@ -86,6 +86,7 @@ class ApiController
                     'Authorization' => 'Bearer ' . $token
                 ],
                 'query' => [
+                    'limit' => $limit,
                     'seed_tracks' => join(',', count($ids) > 5 ? array_slice($ids, 0, 5) : $ids),
                     $attributes->getQuery()
                 ]
