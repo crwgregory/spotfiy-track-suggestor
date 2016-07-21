@@ -1,5 +1,9 @@
 # SpotifyTrackSuggester
 
+Spotify Track Suggester is a way to take advantage of machine learning to produce Spotify track suggestions.
+
+This extension takes advantage of the k-means clustering algorithm supplied for PHP by [Benjamin Delespierre](https://github.com/bdelespierre/php-kmeans).
+
 ### This extension has one endpoint `api/suggest`.
 
 #### The endpoint accepts 5 parameters:
@@ -15,3 +19,6 @@
 - It's then determined the min & max of each groups attributes.
 - The determined attributes are sent in the query to [api.spotify.com/v1/recommendations](https://developer.spotify.com/web-api/get-recommendations) with the first 5 track ids of the group as the seed_tracks.
 - Returned is an array of recommendation responses for each group created by K-Means
+
+### Demo endpoint
+`crwgregory.com/api/suggest`
