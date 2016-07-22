@@ -115,11 +115,11 @@ class ApiController
         $toReturn = [];
         for ($i = 0; $i < $size; $i++) {
 
-            $num = rand(0, count($array));
+            $num = rand(0, count($array) - 1);
 
             $toReturn[] = $array[$num];
 
-            unset($array[$num]);
+            array_splice($array, $num, 1);
         }
         return $toReturn;
     }

@@ -59,7 +59,7 @@ class Attributes
     /**
      * Attributes constructor.
      * @param array $cluster
-     * @param array $buffer
+     * @param float $buffer
      */
     public function __construct($cluster, $buffer)
     {
