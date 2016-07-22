@@ -89,7 +89,7 @@ class ApiController
                 ],
                 'query' => [
                     'limit' => $limit,
-                    'seed_tracks' => join(',', count($ids) > 5 ? array_slice($ids, 0, 5) : $ids),
+                    'seed_tracks' => join(',', count($ids) > 5 ? $this->getRandomArray($ids, 5) : $ids),
                     $attributes->getQuery()
                 ]
             ];
@@ -108,5 +108,19 @@ class ApiController
         return [
             'recommendations' => $recommendations
         ];
+    }
+
+    protected function getRandomArray($array, $size)
+    {
+        $toReturn = [];
+        for ($i = 0; $i < $size; $i++) {
+
+            $num = rand(0, count($array));
+
+            $toReturn[] = $array[$num];
+
+            unset($array[$num]);
+        }
+        return $toReturn;
     }
 }
