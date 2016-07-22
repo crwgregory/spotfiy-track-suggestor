@@ -10,7 +10,7 @@ This extension takes advantage of the k-means clustering algorithm supplied for 
 - `token`: Your access token for Spotify Authorization.
 - `tracks`: An array of track Ids. 
 - `limit`: The target size of the list of recommended tracks. Default: 20. Minimum: 1. Maximum: 100.
-- `groups`: How many groups for K-Means to create [See Wiki on K-Means](https://en.wikipedia.org/wiki/K-means_clustering).
+- `groups`: How many groups for K-Means to create [See Wiki on K-Means](https://en.wikipedia.org/wiki/K-means_clustering). Default: 3
 - `buffer`: Percentage to buffer the max and min of the attributes used to query Spotify. Default: 0.1 Minimum: 0.0 Maximum: 1.0
 
 ### How it works
