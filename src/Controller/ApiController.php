@@ -39,6 +39,10 @@ class ApiController
 
         $groups = $groups ?: App::module('spotify-track-suggester')->config('default_settings')['groups'];
 
+        if (count($tracks) > 100) {
+            $tracks = $this->getRandomArray($tracks, 100);
+        }
+
         $response = $this->spotifyClient->get('audio-features', [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token
